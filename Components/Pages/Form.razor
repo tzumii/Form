@@ -14,13 +14,15 @@
 
         <div class="form-group">
             <label for="password">Password</label>
-            <InputText id="password" class="form-control" placeholder = "Password" @bind-Value="person.Password" required/>
+            <InputText type = "password" id="password" class="form-control" placeholder = "Password" @bind-Value="person.Password" required/>
+            <ValidationMessage For="@(() => person.Password)" class="text-danger" />
             
         </div>
 
         <div class="form-group">
             <label for="confirmPassword">Confirm Password</label>
-            <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm Password" required />
+            <InputText type="password" id="confirmPassword" class="form-control" @bind-Value="person.ConfirmPassword" placeholder="Confirm Password" />
+            <ValidationMessage For="@(() => person.ConfirmPassword)" class="text-danger" />
         </div>
 
         <button type="submit" class="submit-btn">Submit</button>
@@ -36,7 +38,7 @@
     /* Body Styling */
     body {
         font-family: 'Arial', sans-serif;
-        background-color: oldlace;
+        background: radial-gradient(circle,#dad4d6 , #f5b0c7);
         justify-content: center;
         align-items: center;
         min-height: 100vh;
